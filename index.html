@@ -2,30 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulatio</title>
+    <link rel="icon" href="logosena.ico">
+    <link rel="stylesheet" href="Main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Página SENA</title>
 </head>
 <body>
-    <h1>Formulario</h1>
-    <form action="Respuesta.html" method="get">
-        <div>
-        <label>Nombre y Apellido</label>
-        <br>
-        <input type="text">
+
+    <nav>
+        <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Tablas.html">Tablas</a></li>
+            <li><a href="Enlaces.html">Enlaces</a></li>
+            <li><a href="Internet.html">Internet</a></li>
+        </ul>
+    </nav>
+    <div id="banner">
+        <a href="javascript:window.open(clickTag)" id="clicktag">
+            <img id="logo" src="logo.png" alt="Logo Sena">
+            <div class="banner-text">
+                <p class="p p1">SENA</p>
+                <p class="p p2">Servicio Nacional</p>
+                <p class="p p3">De Aprendizaje.</p>
+                <div id="boton">Ver Programas</div>
+            </div>
+            <img src="SENA.png" alt="Imagen de fondo" class="bg bg1">
+        </a>
+    </div>
+
+    <div class="slider">
+        <div class="slide">
+            <img src="imagen1.png" alt="Imagen 1">
         </div>
-        <div>
-            <label>Número De Cedula</label>
-            <br>
-            <input type="text">
+        <div class="slide">
+            <img src="imagen2.png" alt="Imagen 2">
         </div>
-        <div>
-            <label>Email</label>
-            <br>
-            <input type="text">
+        <div class="slide">
+            <img src="imagen3.png" alt="Imagen 3">
         </div>
-        <div>
-            <input type="submit">
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+
+    <section class="content">
+        <h3>Servicio Nacional de Aprendizaje (SENA)</h3>
+        <p>El Servicio Nacional de Aprendizaje (SENA) es una entidad pública de Colombia, creada en 1957, que tiene como objetivo principal ofrecer formación técnica y profesional a la población colombiana. Su misión es proporcionar educación de calidad, orientada a mejorar la empleabilidad y la competitividad de los trabajadores en el país.</p>
+        <p>El SENA se destaca por su enfoque en la formación integral, que no solo incluye aspectos técnicos, sino también el desarrollo de habilidades blandas, como el trabajo en equipo, la comunicación efectiva y la resolución de problemas. Esto permite a los aprendices adaptarse a un entorno laboral en constante cambio.</p>
+        <p>Además de la formación, el SENA juega un papel crucial en la vinculación laboral, facilitando la conexión entre los egresados y las empresas.</p>
+        <p>En resumen, el Servicio Nacional de Aprendizaje es una herramienta fundamental para la formación y el desarrollo de la fuerza laboral en Colombia.</p>
+    </section>
+
+    <div class="video-text-container">
+        <div id="video-frame">
+            <iframe src="https://youtu.be/gB_P1zb2_ds?si=3jjSWXmxoyzCy0Rh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </form>
+        <div id="text-content">
+            <h2>Servicio Nacional De Aprendizaje</h2>
+            <p><b>Visión: </b>Para el año 2026, el SENA estará a la vanguardia de la cualificación del talento humano, tanto a nivel nacional como internacional.</p>
+            <p><b>Misión: </b>Proporcionar instrucción técnica al empleado, formación complementaria para adultos, y ayudar a establecer un sistema nacional de aprendizaje.</p>
+            <p><b>Lema: </b>Una Entidad De Clase Mundial</p>
+            <p><b>Eslogan: </b>Conocimiento Y Emprendimiento Para Todos Los Colombianos</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Formulario de Inscripción</h2>
+        <iframe src="formulario.html" width="600" height="800" style="border: none;"></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Giovannni Florez. Todos los derechos reservados. <br> ADSO: 2826318</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
+
